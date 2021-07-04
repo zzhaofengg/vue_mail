@@ -24,3 +24,8 @@ body,
 .el-pagination{
   margin-top: 15px;
 }
+.el-form-item{
+  > label {
+    width: 80px;
+  }
+}

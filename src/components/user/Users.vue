@@ -96,7 +96,7 @@
           <!-- 内容主题区域 -->
           <el-form :model="editForm" :rules="editFormRules" ref="editFormRef" label-width="70px">
             <el-form-item label="用户名" prop="username">
-              <el-input v-model="editForm.username"></el-input>
+              <el-input v-model="editForm.username" :disabled="true"></el-input>
             </el-form-item>
             <el-form-item label="邮箱" prop="email">
               <el-input v-model="editForm.email"></el-input>
@@ -350,7 +350,7 @@ export default {
 
       const { data: res } = await this.$http.delete('users/' + id)
       if (res.meta.status !== 200) {
-        return this.$message.error('删除用户成功！')
+        return this.$message.error('删除用户失败！')
       }
       this.$message.success('删除用户成功！')
       this.getUserList()
